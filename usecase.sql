@@ -1,0 +1,344 @@
+USE Paraworld;
+-- -- create table BILL (
+-- -- 	bill_id INT,
+-- -- 	date DATE,
+-- -- 	total_charge DECIMAL(7,2),
+-- -- 	service_name VARCHAR(50),
+-- -- 	p_id VARCHAR(50)
+-- -- );
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (1, '2021-12-21', 7605.95, 'CONSULTATION', '118');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (2, '2022-09-07', 1639.43, 'PHARMACY', '193');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (3, '2022-05-05', 5717.92, 'LABORATORY', '20');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (4, '2022-07-15', 5542.33, 'LABORATORY', '34');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (5, '2022-09-12', 8871.82, 'LABORATORY', '150');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (6, '2022-01-24', 4456.35, 'CONSULTATION', '140');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (7, '2022-08-30', 9754.98, 'CONSULTATION', '119');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (8, '2021-11-13', 5092.97, 'PHARMACY', '157');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (9, '2022-05-30', 6107.46, 'PHARMACY', '57');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (10, '2022-08-22', 9481.47, 'CONSULTATION', '108');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (11, '2022-05-21', 7529.48, 'PHARMACY', '194');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (12, '2021-11-30', 6074.32, 'CONSULTATION', '161');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (13, '2021-11-05', 6323.26, 'LABORATORY', '80');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (14, '2022-02-03', 9509.89, 'LABORATORY', '164');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (15, '2021-12-26', 5985.4, 'PHARMACY', '191');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (16, '2022-09-30', 1849.06, 'PHARMACY', '135');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (17, '2021-11-24', 2304.56, 'CONSULTATION', '67');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (18, '2022-03-03', 8294.68, 'LABORATORY', '97');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (19, '2022-07-01', 7114.89, 'LABORATORY', '66');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (20, '2022-08-18', 3012.01, 'CONSULTATION', '198');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (21, '2022-08-01', 1992.55, 'LABORATORY', '13');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (22, '2022-06-06', 1210.48, 'LABORATORY', '88');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (23, '2022-08-27', 5887.33, 'PHARMACY', '144');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (24, '2021-11-22', 1876.03, 'CONSULTATION', '4');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (25, '2022-07-22', 8425.21, 'PHARMACY', '106');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (26, '2022-03-19', 5379.54, 'LABORATORY', '112');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (27, '2021-11-03', 2480.14, 'PHARMACY', '98');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (28, '2022-06-11', 2745.2, 'CONSULTATION', '59');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (29, '2021-12-07', 2616.09, 'CONSULTATION', '155');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (30, '2022-01-05', 3429.85, 'PHARMACY', '85');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (31, '2022-06-10', 169.31, 'LABORATORY', '47');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (32, '2021-11-25', 7060.24, 'LABORATORY', '31');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (33, '2022-07-03', 4606.88, 'LABORATORY', '81');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (34, '2022-01-28', 5184.53, 'PHARMACY', '23');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (35, '2022-04-04', 6358.38, 'PHARMACY', '138');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (36, '2022-06-04', 9691.33, 'LABORATORY', '51');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (37, '2022-08-15', 463.96, 'LABORATORY', '180');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (38, '2022-07-22', 3443.97, 'PHARMACY', '21');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (39, '2022-10-24', 5237.35, 'LABORATORY', '146');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (40, '2021-11-13', 4242.11, 'LABORATORY', '104');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (41, '2022-09-05', 4962.5, 'PHARMACY', '107');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (42, '2022-09-14', 2369.32, 'PHARMACY', '167');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (43, '2022-02-10', 9362.46, 'PHARMACY', '39');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (44, '2022-08-21', 5264.38, 'CONSULTATION', '165');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (45, '2022-01-14', 5664.3, 'LABORATORY', '121');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (46, '2022-09-15', 5333.26, 'PHARMACY', '122');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (47, '2021-12-19', 6666.34, 'CONSULTATION', '43');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (48, '2022-01-21', 1234.76, 'PHARMACY', '195');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (49, '2022-01-31', 3017.67, 'PHARMACY', '158');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (50, '2022-08-17', 2147.35, 'LABORATORY', '102');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (51, '2022-02-04', 9971.99, 'LABORATORY', '142');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (52, '2021-11-27', 7483.72, 'CONSULTATION', '111');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (53, '2022-04-12', 4781.12, 'LABORATORY', '127');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (54, '2021-12-10', 8258.19, 'LABORATORY', '136');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (55, '2022-02-13', 1305.11, 'PHARMACY', '174');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (56, '2022-05-25', 5677.7, 'LABORATORY', '154');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (57, '2021-12-16', 6443.91, 'PHARMACY', '114');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (58, '2022-09-30', 914.03, 'LABORATORY', '41');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (59, '2022-03-14', 6016.3, 'CONSULTATION', '18');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (60, '2022-09-11', 8081.85, 'PHARMACY', '137');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (61, '2022-01-13', 8333.02, 'PHARMACY', '44');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (62, '2021-12-11', 2924.54, 'PHARMACY', '145');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (63, '2022-02-15', 1245.88, 'PHARMACY', '12');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (64, '2022-01-04', 9654.28, 'PHARMACY', '30');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (65, '2022-04-22', 8358.27, 'LABORATORY', '32');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (66, '2021-11-24', 1528.17, 'LABORATORY', '74');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (67, '2021-12-25', 9394.76, 'LABORATORY', '35');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (68, '2022-05-04', 184.31, 'LABORATORY', '160');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (69, '2022-02-20', 4931.01, 'PHARMACY', '128');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (70, '2022-02-19', 5619.06, 'CONSULTATION', '186');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (71, '2021-12-17', 6665.47, 'LABORATORY', '64');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (72, '2022-09-11', 2174.38, 'PHARMACY', '120');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (73, '2022-02-07', 8700.86, 'CONSULTATION', '2');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (74, '2022-04-17', 9980.22, 'PHARMACY', '78');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (75, '2022-10-08', 5926.08, 'PHARMACY', '83');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (76, '2021-12-18', 4350.84, 'LABORATORY', '55');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (77, '2022-10-14', 1523.52, 'PHARMACY', '37');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (78, '2022-06-18', 4001.59, 'CONSULTATION', '173');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (79, '2022-09-02', 9312.89, 'CONSULTATION', '187');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (80, '2022-05-30', 2393.26, 'LABORATORY', '139');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (81, '2022-02-15', 4295.13, 'PHARMACY', '183');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (82, '2022-07-12', 4030.49, 'PHARMACY', '36');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (83, '2022-02-02', 1165.55, 'PHARMACY', '29');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (84, '2021-12-01', 2646.93, 'CONSULTATION', '153');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (85, '2022-08-28', 4446.19, 'PHARMACY', '189');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (86, '2022-10-25', 5007.18, 'CONSULTATION', '58');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (87, '2022-06-04', 2179.98, 'LABORATORY', '79');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (88, '2022-10-08', 8858.49, 'CONSULTATION', '1');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (89, '2021-11-26', 3488.84, 'CONSULTATION', '168');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (90, '2022-06-21', 6850.7, 'PHARMACY', '63');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (91, '2022-05-04', 6143.39, 'LABORATORY', '156');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (92, '2022-06-17', 8585.26, 'CONSULTATION', '172');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (93, '2022-07-08', 9945.06, 'LABORATORY', '170');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (94, '2021-11-30', 7195.35, 'CONSULTATION', '87');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (95, '2022-08-03', 3058.21, 'PHARMACY', '148');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (96, '2022-10-10', 2405.36, 'CONSULTATION', '151');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (97, '2022-09-01', 5224.68, 'PHARMACY', '123');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (98, '2022-01-05', 6184.26, 'LABORATORY', '69');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (99, '2021-11-27', 7020.58, 'LABORATORY', '175');
+-- -- insert into BILL (bill_id, date, total_charge, service_name, p_id) values (100, '2022-04-06', 6842.83, 'LABORATORY', '5');
+-- create table PATIENT (
+-- 	p_id INT,
+-- 	name VARCHAR(50),
+--     age INT,
+-- 	email VARCHAR(50),
+-- 	gender VARCHAR(50),
+-- 	phone_no VARCHAR(50),
+-- 	last_donation DATE,
+-- 	blood_group VARCHAR(50)
+-- );
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (1, 'Andeee Rush', 17, 'arush0@latimes.com', 'Non-binary', '(773) 7040331', '2021-11-11', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (2, 'Bridget Annice', 69, 'bannice1@jigsy.com', 'Female', '(764) 7176233', '2022-09-28', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (3, 'Krishna Szimoni', 44, 'kszimoni2@phoca.cz', 'Male', '(415) 6223302', '2020-12-05', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (4, 'Gus Hull', 16, 'ghull3@1688.com', 'Genderqueer', '(984) 9622547', '2020-06-04', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (5, 'Josiah Foresight', 1, 'jforesight4@soundcloud.com', 'Male', '(512) 2410390', '2020-05-20', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (6, 'Ruthe Treversh', 8, 'rtreversh5@technorati.com', 'Female', '(605) 3903388', '2020-08-24', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (7, 'Averill Odger', 59, 'aodger6@homestead.com', 'Male', '(761) 2754871', '2021-09-04', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (8, 'Marcie Korfmann', 56, 'mkorfmann7@cisco.com', 'Polygender', '(838) 9572715', '2021-11-13', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (9, 'Harri Escolme', 46, 'hescolme8@thetimes.co.uk', 'Female', '(817) 6061845', '2019-11-12', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (10, 'Johna Macourek', 53, 'jmacourek9@alexa.com', 'Female', '(460) 5882032', '2020-12-02', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (11, 'Sondra Higbin', 58, 'shigbina@blogtalkradio.com', 'Agender', '(926) 7576497', '2021-01-13', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (12, 'Frederich Strelitzer', 69, 'fstrelitzerb@yolasite.com', 'Male', '(554) 1216960', '2022-02-25', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (13, 'Swen Pucker', 43, 'spuckerc@google.ca', 'Male', '(791) 6353561', '2022-02-11', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (14, 'Kylen Salkeld', 5, 'ksalkeldd@illinois.edu', 'Female', '(607) 8132590', '2021-08-13', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (15, 'Elsy Murrigans', 17, 'emurriganse@youku.com', 'Female', '(426) 3675747', '2022-09-05', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (16, 'Caril Lacoste', 6, 'clacostef@businessweek.com', 'Female', '(222) 5511255', '2020-04-10', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (17, 'Edna Dybell', 13, 'edybellg@nps.gov', 'Female', '(191) 1779059', '2019-10-09', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (18, 'Tobye Roiz', 58, 'troizh@shop-pro.jp', 'Bigender', '(469) 9697096', '2022-05-16', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (19, 'Jessey Girault', 54, 'jgiraulti@cdc.gov', 'Male', '(791) 8963698', '2021-01-24', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (20, 'Billy Barns', 62, 'bbarnsj@gizmodo.com', 'Female', '(819) 2949286', '2021-12-15', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (21, 'Monika Vyel', 35, 'mvyelk@blog.com', 'Female', '(353) 8071438', '2020-09-20', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (22, 'Lay Stiddard', 14, 'lstiddardl@dedecms.com', 'Male', '(451) 5086259', '2020-03-31', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (23, 'Annie Kingswood', 63, 'akingswoodm@army.mil', 'Female', '(646) 3164400', '2022-03-01', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (24, 'Clifford McGivena', 51, 'cmcgivenan@earthlink.net', 'Male', '(181) 6477699', '2019-10-23', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (25, 'De Bowell', 54, 'dbowello@harvard.edu', 'Female', '(948) 8932655', '2021-10-17', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (26, 'Kacie Drew-Clifton', 61, 'kdrewcliftonp@upenn.edu', 'Female', '(521) 3399108', '2021-06-30', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (27, 'Eddy Dempster', 19, 'edempsterq@pen.io', 'Male', '(636) 3719590', '2021-01-18', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (28, 'Delcina McFarlan', 59, 'dmcfarlanr@opensource.org', 'Female', '(764) 7015933', '2020-01-20', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (29, 'Flynn Kembrey', 11, 'fkembreys@nsw.gov.au', 'Male', '(658) 4123708', '2022-07-30', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (30, 'Roz Lorentz', 36, 'rlorentzt@reverbnation.com', 'Genderfluid', '(375) 8502419', '2020-10-25', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (31, 'Fabien Tweede', 5, 'ftweedeu@ucoz.com', 'Male', '(172) 2603299', '2021-04-14', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (32, 'Haydon Leadbeater', 21, 'hleadbeaterv@va.gov', 'Male', '(491) 5635489', '2021-04-07', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (33, 'Julius Jansema', 49, 'jjansemaw@marketwatch.com', 'Male', '(303) 7916126', '2022-04-02', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (34, 'Leonardo Fairrie', 13, 'lfairriex@google.de', 'Genderfluid', '(608) 4718935', '2021-05-16', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (35, 'Adriena Pundy', 57, 'apundyy@wunderground.com', 'Female', '(326) 4300038', '2021-07-05', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (36, 'Lenee Elsmor', 45, 'lelsmorz@china.com.cn', 'Female', '(579) 9363490', '2021-06-06', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (37, 'Rosalyn Zelley', 32, 'rzelley10@whitehouse.gov', 'Bigender', '(431) 1072117', '2021-01-05', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (38, 'Auguste Kitteringham', 49, 'akitteringham11@wufoo.com', 'Female', '(820) 6408908', '2021-01-22', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (39, 'Ricard Doy', 22, 'rdoy12@homestead.com', 'Male', '(566) 1445548', '2021-11-09', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (40, 'Adriena Putten', 24, 'aputten13@cdc.gov', 'Female', '(436) 4525851', '2021-09-04', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (41, 'Windy Dzenisenka', 65, 'wdzenisenka14@msu.edu', 'Female', '(597) 8390953', '2022-04-12', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (42, 'Mari Jozsef', 26, 'mjozsef15@webs.com', 'Female', '(440) 1859927', '2021-03-22', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (43, 'Judas Le Sieur', 20, 'jle16@examiner.com', 'Male', '(515) 2781567', '2022-01-25', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (44, 'Silvan Stiff', 37, 'sstiff17@discovery.com', 'Male', '(655) 6651692', '2022-04-18', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (45, 'Hugues Hainsworth', 28, 'hhainsworth18@desdev.cn', 'Male', '(890) 6648907', '2021-12-09', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (46, 'Tanya Strain', 26, 'tstrain19@answers.com', 'Female', '(947) 7022917', '2020-10-27', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (47, 'Karee Bracken', 55, 'kbracken1a@lulu.com', 'Female', '(319) 7627456', '2021-11-25', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (48, 'Ethelyn Mines', 59, 'emines1b@g.co', 'Female', '(581) 2312791', '2021-01-17', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (49, 'Taite Jeandin', 47, 'tjeandin1c@foxnews.com', 'Male', '(338) 8879058', '2020-11-06', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (50, 'Emile Clemence', 10, 'eclemence1d@github.com', 'Male', '(881) 5245418', '2020-05-01', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (51, 'Mohammed Avo', 39, 'mavo1e@state.gov', 'Male', '(422) 2062237', '2020-09-05', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (52, 'Nil Maeer', 30, 'nmaeer1f@1688.com', 'Male', '(528) 8272640', '2020-02-01', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (53, 'Marthe Velten', 38, 'mvelten1g@mayoclinic.com', 'Female', '(715) 7791006', '2021-01-06', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (54, 'Meier Cawdery', 10, 'mcawdery1h@sciencedirect.com', 'Male', '(628) 6295253', '2021-01-26', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (55, 'Levy Peare', 45, 'lpeare1i@usnews.com', 'Male', '(920) 5925061', '2020-07-31', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (56, 'Isa Garrand', 25, 'igarrand1j@ifeng.com', 'Female', '(340) 4093625', '2021-12-18', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (57, 'Clevie Alywen', 28, 'calywen1k@google.ca', 'Male', '(754) 1390643', '2022-07-06', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (58, 'Yule Van Der Straaten', 60, 'yvan1l@cdc.gov', 'Male', '(553) 3949960', '2019-10-25', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (59, 'Elayne Linny', 42, 'elinny1m@java.com', 'Female', '(150) 3444648', '2020-05-24', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (60, 'Shellie Sevior', 64, 'ssevior1n@cargocollective.com', 'Female', '(606) 6430379', '2020-02-02', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (61, 'Charmine Millmoe', 63, 'cmillmoe1o@dedecms.com', 'Female', '(744) 9325808', '2021-08-12', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (62, 'Glynn Roebuck', 5, 'groebuck1p@constantcontact.com', 'Male', '(709) 9779688', '2022-04-26', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (63, 'Roth Stonebanks', 10, 'rstonebanks1q@state.tx.us', 'Male', '(984) 2875210', '2020-01-26', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (64, 'Johannes Deniseau', 37, 'jdeniseau1r@edublogs.org', 'Male', '(867) 3156298', '2021-11-04', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (65, 'Agnola Wildgoose', 41, 'awildgoose1s@pbs.org', 'Female', '(409) 6121385', '2020-10-21', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (66, 'Sauncho Tankard', 61, 'stankard1t@google.pl', 'Male', '(308) 9979858', '2020-02-23', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (67, 'Lucia Peskett', 55, 'lpeskett1u@acquirethisname.com', 'Female', '(450) 5418532', '2020-01-26', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (68, 'Elbertina Keslake', 42, 'ekeslake1v@flavors.me', 'Female', '(896) 9338742', '2022-08-05', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (69, 'Jana Nuzzti', 66, 'jnuzzti1w@hexun.com', 'Female', '(757) 7291893', '2022-06-13', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (70, 'Kate Butfield', 48, 'kbutfield1x@latimes.com', 'Female', '(471) 8347336', '2020-04-24', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (71, 'Alisun Elacoate', 9, 'aelacoate1y@mysql.com', 'Female', '(244) 5718329', '2020-06-24', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (72, 'Claybourne Row', 59, 'crow1z@businessweek.com', 'Male', '(269) 4317304', '2020-08-04', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (73, 'Willette Petford', 27, 'wpetford20@google.com', 'Female', '(950) 7233679', '2021-03-07', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (74, 'Lindie Stych', 27, 'lstych21@dyndns.org', 'Female', '(171) 5208449', '2021-06-11', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (75, 'Edee Brister', 22, 'ebrister22@google.pl', 'Female', '(614) 3080087', '2021-10-09', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (76, 'Hebert Gotts', 69, 'hgotts23@netvibes.com', 'Male', '(201) 5141997', '2020-12-15', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (77, 'Hans Hartnup', 6, 'hhartnup24@tumblr.com', 'Male', '(549) 9785757', '2020-07-27', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (78, 'Angus Faircloth', 40, 'afaircloth25@google.it', 'Male', '(123) 5344966', '2022-01-04', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (79, 'Travers Curley', 24, 'tcurley26@theglobeandmail.com', 'Male', '(425) 3333547', '2022-02-02', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (80, 'Laura Cathrae', 2, 'lcathrae27@tmall.com', 'Female', '(299) 5368267', '2022-08-13', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (81, 'Rebe Coathup', 18, 'rcoathup28@g.co', 'Female', '(360) 1176466', '2020-10-03', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (82, 'Sarine Le Leu', 49, 'sle29@moonfruit.com', 'Female', '(921) 7109060', '2022-10-20', 'AB+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (83, 'Orson Jervoise', 70, 'ojervoise2a@economist.com', 'Male', '(110) 7732271', '2021-08-19', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (84, 'Kandace Tomkins', 19, 'ktomkins2b@reference.com', 'Female', '(502) 8396127', '2019-09-07', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (85, 'Spence Franceschielli', 51, 'sfranceschielli2c@creativecommons.org', 'Male', '(337) 9624903', '2022-04-10', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (86, 'Antonio Furneaux', 51, 'afurneaux2d@ca.gov', 'Male', '(438) 5055288', '2020-12-27', 'A+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (87, 'Skyler Corbridge', 9, 'scorbridge2e@naver.com', 'Male', '(598) 9843306', '2021-03-10', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (88, 'Huntington Llewelyn', 28, 'hllewelyn2f@about.com', 'Male', '(799) 4967229', '2019-12-05', 'B+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (89, 'Jareb Bingell', 50, 'jbingell2g@qq.com', 'Male', '(272) 9270694', '2020-05-25', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (90, 'Marijo Levane', 20, 'mlevane2h@huffingtonpost.com', 'Female', '(850) 5435028', '2020-12-04', 'B-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (91, 'Terri Terese', 22, 'tterese2i@goo.ne.jp', 'Female', '(313) 4545657', '2019-12-19', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (92, 'Padraic Ockwell', 43, 'pockwell2j@weibo.com', 'Male', '(730) 4181221', '2019-11-19', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (93, 'Peg Andrzej', 44, 'pandrzej2k@quantcast.com', 'Female', '(472) 4548727', '2022-05-03', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (94, 'Etti Blaszkiewicz', 12, 'eblaszkiewicz2l@wired.com', 'Female', '(701) 4777043', '2022-09-28', 'A-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (95, 'Haskel Hebborn', 12, 'hhebborn2m@issuu.com', 'Genderfluid', '(232) 4763731', '2019-12-13', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (96, 'Vilma Latehouse', 66, 'vlatehouse2n@usatoday.com', 'Female', '(516) 3644488', '2021-12-11', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (97, 'Gwyn Mioni', 67, 'gmioni2o@yellowpages.com', 'Female', '(642) 9796482', '2020-11-25', 'AB-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (98, 'Bettine Cruse', 35, 'bcruse2p@stumbleupon.com', 'Female', '(531) 8110176', '2020-09-06', 'O+ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (99, 'Patrice Jacquet', 56, 'pjacquet2q@shop-pro.jp', 'Genderfluid', '(749) 9003410', '2022-07-21', 'O-ve');
+-- insert into PATIENT (p_id, name, age, email, gender, phone_no, last_donation, blood_group) values (100, 'Ellissa Anderson', 45, 'eanderson2r@thetimes.co.uk', 'Female', '(574) 2018125', '2021-01-26', 'O+ve');
+-- -- create table DOCTOR (
+-- -- 	d_ssn VARCHAR(50),
+-- -- 	email VARCHAR(50),
+-- -- 	gender VARCHAR(50),
+-- -- 	name VARCHAR(50),
+-- -- 	age INT,
+-- -- 	years_exp INT,
+-- -- 	med_register_id VARCHAR(50),
+-- -- 	speciality INT,
+-- -- 	degree VARCHAR(50)
+-- -- );
+-- -- create table CONSULTATION (
+-- -- 	consult_id INT,
+-- -- 	diagnosis VARCHAR(50),
+-- -- 	date DATE,
+-- -- 	slot_time VARCHAR(50),
+-- -- 	prescription VARCHAR(50),
+-- -- 	p_id VARCHAR(50),
+-- -- 	d_ssn VARCHAR(50)
+-- -- );
+-- -- create table DELIVERY_STAFF (
+-- -- 	ds_ssn VARCHAR(50),
+-- -- 	name VARCHAR(50),
+-- -- 	gender VARCHAR(50),
+-- -- 	age INT,
+-- -- 	pharmacy_id VARCHAR(50)
+-- -- );
+-- create table LAB_STAFF (
+-- 	ls_ssn VARCHAR(50),
+-- 	name VARCHAR(50),
+-- 	gender VARCHAR(50),
+-- 	age INT,
+-- 	degree VARCHAR(50),
+-- 	laboratory_id INT
+-- );
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('298-65-6465', 'Astrid Hein', 'Female', 32, 'AAS', 3);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('453-36-7562', 'Randy Rolin', 'Male', 40, 'AAS', 7);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('125-72-4673', 'Nichole Forde', 'Female', 42, 'Diploma', 5);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('563-09-1015', 'Lucille Sams', 'Polygender', 34, 'BS', 2);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('500-32-4547', 'Rickard Kenn', 'Male', 27, 'AAS', 5);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('321-08-6672', 'Ladonna Rahl', 'Female', 32, 'AAS', 4);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('260-68-5843', 'Silvio Busch', 'Male', 35, 'BS', 10);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('811-39-9698', 'Nerte Powderham', 'Female', 48, 'AAS', 7);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('534-66-8452', 'Hill Richardt', 'Male', 34, 'BS', 1);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('274-48-3942', 'Gilberte Urling', 'Female', 43, 'BS', 8);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('380-89-6467', 'Brady Leverentz', 'Male', 35, 'AAS', 5);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('617-90-2407', 'Kipper Dowdam', 'Male', 33, 'Diploma', 1);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('833-16-9577', 'Ina McGiffie', 'Female', 49, 'AAS', 4);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('856-61-8525', 'Ellynn Billyard', 'Agender', 27, 'BS', 1);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('227-97-2270', 'Kristian Wordington', 'Male', 28, 'Diploma', 9);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('611-24-6530', 'Micki D''Errico', 'Female', 37, 'Diploma', 3);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('829-17-7673', 'Leigh Dolling', 'Genderqueer', 47, 'Diploma', 7);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('623-51-6484', 'Larine Ginnety', 'Female', 33, 'BS', 1);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('374-80-2034', 'Myrtice Jeffries', 'Female', 35, 'AAS', 7);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('408-51-4868', 'Briano Wiseman', 'Male', 31, 'BS', 3);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('879-20-2058', 'Cristie Heynen', 'Female', 30, 'BS', 4);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('590-07-1342', 'Gabe Stepto', 'Male', 42, 'Diploma', 4);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('112-86-5351', 'Shoshana Muldowney', 'Female', 37, 'AAS', 6);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('756-09-2575', 'Florance Zuanazzi', 'Female', 45, 'AAS', 1);
+-- insert into LAB_STAFF (ls_ssn, name, gender, age, degree, laboratory_id) values ('383-89-3819', 'Tiena Minero', 'Female', 39, 'BS', 5);
+-- create table LAB_TEST (
+-- 	test_id INT,
+-- 	date_collected DATE,
+-- 	date_released DATE,
+-- 	test_taken VARCHAR(50),
+-- 	test_report VARCHAR(50),
+-- 	p_id INT,
+-- 	ls_ssn VARCHAR(50),
+-- 	laboratory_id INT
+-- );
+-- -- create table LABORATORY (
+-- -- 	laboratory_id INT,
+-- -- 	name VARCHAR(50),
+-- -- 	address VARCHAR(50)
+-- -- );
+-- insert into LABORATORY (laboratory_id, name, address) values (1, 'Quimba', '419 East Court');
+-- insert into LABORATORY (laboratory_id, name, address) values (2, 'Rhyloo', '3 Butternut Lane');
+-- insert into LABORATORY (laboratory_id, name, address) values (3, 'Oyoyo', '7896 Loftsgordon Drive');
+-- insert into LABORATORY (laboratory_id, name, address) values (4, 'Jetpulse', '94186 Birchwood Center');
+-- insert into LABORATORY (laboratory_id, name, address) values (5, 'Avavee', '9117 Chive Circle');
+-- insert into LABORATORY (laboratory_id, name, address) values (6, 'Thoughtsphere', '948 Sunnyside Avenue');
+-- insert into LABORATORY (laboratory_id, name, address) values (7, 'Buzzster', '40391 Jenna Park');
+-- insert into LABORATORY (laboratory_id, name, address) values (8, 'Vidoo', '5912 Darwin Hill');
+-- insert into LABORATORY (laboratory_id, name, address) values (9, 'Snaptags', '7 Katie Avenue');
+-- insert into LABORATORY (laboratory_id, name, address) values (10, 'Fivespan', '662 Moulton Junction');
+-- -- create table MEDICINE (
+-- -- 	med_id VARCHAR(50),
+-- -- 	name VARCHAR(50),
+-- -- 	quantity INT,
+-- -- 	pharmacy_id VARCHAR(50)
+-- -- );
+-- -- create table ORDERS (
+-- -- 	ord_id INT,
+-- -- 	ord_time VARCHAR(50),
+-- -- 	del_time VARCHAR(50),
+-- -- 	del_date DATE,
+-- -- 	p_id VARCHAR(50),
+-- -- 	pharmacy_id VARCHAR(50),
+-- -- 	ds_ssn VARCHAR(50)
+-- -- );
+-- -- create table PHARMACY (
+-- -- 	pharmacy_id INT,
+-- -- 	name VARCHAR(50),
+-- -- 	address VARCHAR(50)
+-- -- );
+-- insert into PHARMACY (pharmacy_id, name, address) values (1, 'Hessel-Von', '1300 Mendota Plaza');
+-- insert into PHARMACY (pharmacy_id, name, address) values (2, 'Okuneva-Nicolas', '49042 Pepper Wood Court');
+-- insert into PHARMACY (pharmacy_id, name, address) values (3, 'Kilback, Torp and Bogan', '59 Jana Court');
+-- insert into PHARMACY (pharmacy_id, name, address) values (4, 'Mosciski-Bartell', '04 Heffernan Point');
+-- insert into PHARMACY (pharmacy_id, name, address) values (5, 'Prosacco, Lakin and Cole', '8 Goodland Crossing');
+-- insert into PHARMACY (pharmacy_id, name, address) values (6, 'Conroy and Sons', '246 Forest Dale Street');
+-- insert into PHARMACY (pharmacy_id, name, address) values (7, 'Hartmann-Roberts', '05 Gina Place');
+-- insert into PHARMACY (pharmacy_id, name, address) values (8, 'Feeney, Bergnaum and Streich', '212 Ramsey Street');
+-- insert into PHARMACY (pharmacy_id, name, address) values (9, 'Mayert, Connelly and Collins', '414 Blaine Alley');
+-- insert into PHARMACY (pharmacy_id, name, address) values (10, 'McDermott, Schroeder and Hayes', '14138 Loomis Road');
+-- insert into PHARMACY (pharmacy_id, name, address) values (11, 'Wilkinson-Mraz', '41 Golf Drive');
+-- insert into PHARMACY (pharmacy_id, name, address) values (12, 'Runolfsdottir, Harber and Braun', '8932 Morningstar Street');
+-- insert into PHARMACY (pharmacy_id, name, address) values (13, 'Schmeler-Blick', '7 Ludington Crossing');
+-- insert into PHARMACY (pharmacy_id, name, address) values (14, 'Bednar and Sons', '683 Dryden Hill');
+-- insert into PHARMACY (pharmacy_id, name, address) values (15, 'White and Sons', '7676 Iowa Place');
+-- insert into PHARMACY (pharmacy_id, name, address) values (16, 'Turner, Schumm and Schmitt', '447 Melvin Road');
+-- insert into PHARMACY (pharmacy_id, name, address) values (17, 'Lubowitz Inc', '4 Amoth Lane');
+-- insert into PHARMACY (pharmacy_id, name, address) values (18, 'Muller LLC', '78 Shoshone Trail');
+-- insert into PHARMACY (pharmacy_id, name, address) values (19, 'Klocko Group', '453 Basil Point');
+-- insert into PHARMACY (pharmacy_id, name, address) values (20, 'Rippin-Reinger', '1 Nelson Way');
+
